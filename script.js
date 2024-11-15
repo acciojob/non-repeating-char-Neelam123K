@@ -1,15 +1,26 @@
 function firstNonRepeatedChar(str) {
  // Write your code here
-	 const charCount = {};
-	for (let char of str) {
-        charCount[char] = (charCount[char] || 0) + 1;
-    }
-	 for (let char of str) {
-        if (charCount[char] === 1) {
-            return char;
-        }
-    }
-	return null;
+	if (!str)
+	{
+		return null
+	}
+	 let freqObj = {}
+	for(let i = 0; i < str.length; i++)
+		{
+			if(!freqObj[str.charAt(i)])
+			{
+				freqObj[str.charAt(i)] = 1
+			}
+			else
+			{
+				freqObj[str[str.charAt(i)]] = freqObj[str.charAt(i)]+1
+			}
+		}
+	for(let item in freqObj)
+		{
+			if(freqObj[item] == 1)
+		}
+	return item
 }
-const input = prompt("Enter a string");
-alert(firstNonRepeatedChar(input)); 
+// const input = prompt("Enter a string");
+// alert(firstNonRepeatedChar(input)); 
